@@ -29,8 +29,8 @@ function NavBar() : React.ReactElement {
         <TextBox>Diary</TextBox>
       </Container>
       <Container position="right">
-        <ImageBox ImgUrl="GitHub.png"/>
-        <ImageBox ImgUrl="mail.png"/>
+        <ImageBox radius width="50px" height="50px" ImgUrl="GitHub.png"/>
+        <ImageBox radius width="50px" height="50px" ImgUrl="mail.png"/>
       </Container>
     </Nav>
   )
