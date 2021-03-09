@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Color Theme Swatches in Hex */
+.My-Color-Theme-1-hex { color: #FFCCEE; }
+.My-Color-Theme-2-hex { color: #FFF9D9; }
+.My-Color-Theme-3-hex { color: #E8C0FF; }
+.My-Color-Theme-4-hex { color: #B0FFA6; }
+.My-Color-Theme-5-hex { color: #B9B3FF; }
+
+/* Color Theme Swatches in RGBA */
+.My-Color-Theme-1-rgba { color: rgba(255, 204, 238, 1); }
+.My-Color-Theme-2-rgba { color: rgba(255, 249, 217, 1); }
+.My-Color-Theme-3-rgba { color: rgba(232, 192, 255, 1); }
+.My-Color-Theme-4-rgba { color: rgba(176, 255, 166, 1); }
+.My-Color-Theme-5-rgba { color: rgba(185, 179, 255, 1); }
+
+/* Color Theme Swatches in HSLA */
+.My-Color-Theme-1-hsla { color: hsla(320, 100, 90, 1); }
+.My-Color-Theme-2-hsla { color: hsla(50, 100, 92, 1); }
+.My-Color-Theme-3-hsla { color: hsla(278, 100, 87, 1); }
+.My-Color-Theme-4-hsla { color: hsla(113, 100, 82, 1); }
+.My-Color-Theme-5-hsla { color: hsla(244, 100, 85, 1); }

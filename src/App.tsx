@@ -5,7 +5,7 @@ import './App.css';
 import NavVar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
 import Projects from './components/Projects/Projects';
-import Diary from './components/Diary/Diary';
+import Diary from './components/About/About';
 
 function App():React.ReactElement {
   return (

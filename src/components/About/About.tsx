@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextBox from '../TextBox';
-import Card from '../Card';
+import Card from '../Card'
 
 
-const ProjectsWrqpper = styled.div`
-  background-color: rgb(28, 191, 123);
+const DiaryWrapper = styled.div`
+  background-color: rgb(175, 28, 212);
 `
 
-
-function Projects(): React.ReactElement {
+function Diary(): React.ReactElement {
   return (
-    <ProjectsWrqpper>
-      <TextBox>인사인사인사</TextBox>
+    <DiaryWrapper>
+      <TextBox>인사 인사 인사</TextBox>
       <div>
         <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
         <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
@@ -21,9 +20,9 @@ function Projects(): React.ReactElement {
         <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
         <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
       </div>
-    </ProjectsWrqpper>
+    </DiaryWrapper>
   )
 }
 
 
-export default Projects
+export default Diary
