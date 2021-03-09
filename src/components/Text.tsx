@@ -7,7 +7,7 @@ interface TextPropsType {
   height?: string
 };
 
-const Text = styled.div<TextPropsType>`
+const Text = styled.p<TextPropsType>`
   display: inline-block;
   width: ${props => props.width ? props.width : ''};
   height: ${props => props.height ? props.height : ''};
