@@ -1,7 +1,8 @@
 import React from 'react';
 import ImageBox from '../ImageBox';
-import TextBox from '../TextBox';
+import Text from '../Text';
 import styled from 'styled-components';
+import { withRouter, Link } from 'react-router-dom';
 
 
 interface ContinerPropsType {
@@ -9,10 +10,11 @@ interface ContinerPropsType {
 }
 
 
-const Nav = styled.nav`
+const Nav = styled.nav<any>`
   height: 50px;
   width: 100%;
-  background-color:rgb(245, 242, 212);
+  background-color:#E8C0FF;
+  display: ${props => props.isHome ? 'none' : ''};
 `
 
 const Container = styled.div<ContinerPropsType>`
@@ -20,20 +22,27 @@ const Container = styled.div<ContinerPropsType>`
   float: ${props => props.position};
 `
 
-function NavBar() : React.ReactElement {
+function NavBar({ location }: any) : React.ReactElement {
+  console.log('path: ', location)
   return (
-    <Nav>
+    <Nav isHome={location.pathname === '/'}>
       <Container position="left">
-        <TextBox>Home</TextBox>
-        <TextBox>Projects</TextBox>
-        <TextBox>Diary</TextBox>
+        <Link to='/'>
+          <Text>Home</Text>
+        </Link>
+        <Link to='/projects'>
+          <Text>Projects</Text>
+        </Link>
+        <Link to='/about'>
+          <Text>About</Text>
+        </Link>
       </Container>
       <Container position="right">
-        <ImageBox radius width="50px" height="50px" ImgUrl="GitHub.png"/>
-        <ImageBox radius width="50px" height="50px" ImgUrl="mail.png"/>
+        <ImageBox radius="100%" width="50px" height="50px" ImgUrl="GitHub.png"/>
+        <ImageBox radius="100%" width="50px" height="50px" ImgUrl="mail.png"/>
       </Container>
     </Nav>
   )
 }
 
-export default NavBar
+export default withRouter(NavBar)

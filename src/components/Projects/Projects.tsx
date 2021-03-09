@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextBox from '../TextBox';
+import Text from '../Text';
 import Card from '../Card';
 
 
@@ -12,14 +12,15 @@ const ProjectsWrqpper = styled.div`
 function Projects(): React.ReactElement {
   return (
     <ProjectsWrqpper>
-      <TextBox>인사인사인사</TextBox>
+      <Text>인사인사인사</Text>
       <div>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
+        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
+        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
+        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
+        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
+        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
+        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
+
       </div>
     </ProjectsWrqpper>
   )

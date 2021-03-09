@@ -1,28 +1,50 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextBox from '../TextBox';
-import Card from '../Card'
+import ImageBox from '../ImageBox';
+import Text from '../Text';
 
 
-const DiaryWrapper = styled.div`
-  background-color: rgb(175, 28, 212);
+const AboutWrapper = styled.section`
+  background-color: rgb(123, 134, 90);
 `
 
-function Diary(): React.ReactElement {
+
+
+function About(): React.ReactElement {
   return (
-    <DiaryWrapper>
-      <TextBox>인사 인사 인사</TextBox>
-      <div>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="소개"/>
+    <AboutWrapper>
+      <ImageBox width="30%" height="400px" ImgUrl="GitHub.png" />
+      <Text width="30%">
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me
+        About me        
+      </Text>
+      <div className="icons">
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
+        <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
       </div>
-    </DiaryWrapper>
+    </AboutWrapper>
   )
 }
 
-
-export default Diary
+export default About

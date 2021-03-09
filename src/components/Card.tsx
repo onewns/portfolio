@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ImageBox from './ImageBox';
-import TextBox from './TextBox';
+import Text from './Text';
 
 interface CardPropsType {
   ImgWidth: string, 
@@ -21,7 +21,7 @@ function card( { ImgWidth, ImgHeight, TextWidth, text }: CardPropsType ) {
   return (
     <Card>
       <ImageBox width={ImgWidth} height={ImgHeight} ImgUrl='GitHub.png' />
-      <TextBox width={TextWidth}>{text}</TextBox>
+      <Text width={TextWidth}>{text}</Text>
     </Card>
   )
 }

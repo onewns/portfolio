@@ -5,7 +5,7 @@ interface ImageBoxPropsType {
   ImgUrl?: string,
   width?: string,
   height?: string,
-  radius?: boolean,
+  radius?: string,
 }
 
 
@@ -16,7 +16,7 @@ const ImageBox = styled.div<ImageBoxPropsType>`
   background-size: cover;
   background-position: center;
   display: inline-block;
-  border-radius: ${props => props.radius ? '100%': ''};
+  border-radius: ${props => props.radius};
 `
 
 export default ImageBox
