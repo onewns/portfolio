@@ -1,27 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from '../Text';
+import Wrapper from '../Wrapper';
 import Card from '../Card';
 
 
-const ProjectsWrqpper = styled.div`
-  background-color: rgb(28, 191, 123);
+const ProjectsWrqpper = styled(Wrapper)`
+`
+
+const Title = styled.h1`
+  margin: 2rem 0;
 `
 
 
-function Projects(): React.ReactElement {
+const CardWrapper = styled(Wrapper)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+`
+
+
+function Projects({ state }: any): React.ReactElement {
+  const { projects } = state;
+  
   return (
     <ProjectsWrqpper>
-      <Text>인사인사인사</Text>
-      <div>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
-        <Card ImgWidth="100%" ImgHeight="30%" TextWidth="100%" text="프로젝트 설명"/>
-
-      </div>
+      <Title>My Projects</Title>
+      <CardWrapper>
+        {projects.map((project: any, index: number) => 
+          <Card key={index} data={project} />
+        )}
+      </CardWrapper>
     </ProjectsWrqpper>
   )
 }

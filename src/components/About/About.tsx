@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import ImageBox from '../ImageBox';
 import Text from '../Text';
+import Wrapper from '../Wrapper';
 
 
-const AboutWrapper = styled.section`
-  background-color: rgb(123, 134, 90);
+const AboutWrapper = styled(Wrapper)`
+  margin-top: 3rem;
 `
 
 
@@ -13,27 +14,9 @@ const AboutWrapper = styled.section`
 function About(): React.ReactElement {
   return (
     <AboutWrapper>
-      <ImageBox width="30%" height="400px" ImgUrl="GitHub.png" />
+      <img src="me.jpg" alt="me"/>
       <Text width="30%">
         About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me
-        About me        
-      </Text>
       <div className="icons">
         <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
         <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
@@ -43,6 +26,7 @@ function About(): React.ReactElement {
         <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
         <ImageBox width="40px" height="40px" ImgUrl="GitHub.png" />
       </div>
+      </Text>
     </AboutWrapper>
   )
 }

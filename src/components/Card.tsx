@@ -1,30 +1,56 @@
+import { useState } from "react";
 import styled from "styled-components";
-import ImageBox from './ImageBox';
+import Modal from './Modal';
 import Text from './Text';
 
 interface CardPropsType {
-  ImgWidth: string, 
-  ImgHeight: string,
-  TextWidth: string,
-  text: string,
+  data: any,
 }
 
-const Card = styled.div`
-  width: 23%;
-  margin: 2%;
-  height: 400px;
-  display: inline-block;
-  background-color: red;
+const CardWrapper = styled.div`
+  position: relative;
+  min-width: 360px;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  width: 15rem;
+  height: auto;
+  margin: 1rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 99;
+  }
 `
 
-function card( { ImgWidth, ImgHeight, TextWidth, text }: CardPropsType ) {
+const Img = styled.img`
+  width: 100%;
+  height: 50%;
+`
+
+const CardBody = styled.div`
+  padding: 0 1rem;
+  padding-top: 1rem;
+`
+
+function Card( { data }: CardPropsType ) {
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
   return (
-    <Card>
-      <ImageBox width={ImgWidth} height={ImgHeight} ImgUrl='GitHub.png' />
-      <Text width={TextWidth}>{text}</Text>
-    </Card>
+    <>
+      <CardWrapper>
+        <Img src={data.imgUrl} />
+        <CardBody>
+          <Text as='h5'>{data.title}</Text>
+          <Text width='100%'>{data.text}</Text>
+          <button onClick={() => { setIsVisibleModal(true) }}>view detail</button>
+        </CardBody>
+      </CardWrapper>
+      {isVisibleModal && <Modal data={data} onClick={setIsVisibleModal}/>}
+    </>
+    
   )
 }
 
 
-export default card
+export default Card

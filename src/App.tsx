@@ -9,6 +9,27 @@ import Projects from './components/Projects/Projects';
 import Home from './components/Home/Home';
 
 
+const state = {
+  projects: [
+    {
+      title: 'Tailor',
+      text: 'Tailor 설명',
+      imgUrl: 'Tailor.png'
+    },
+    {
+      title: 'UWantBeer',
+      text: 'UWantBeer 설명',
+      imgUrl: 'UWantBeer.jpg'
+    },
+    {
+      title: 'FaceOFF',
+      text: 'FaceOFF 설명',
+      imgUrl: 'FaceOFF.png'
+    },
+  ]
+}
+
+
 
 function App():React.ReactElement {
   return (
@@ -19,7 +40,7 @@ function App():React.ReactElement {
           <About />
         </Route>
         <Route path="/projects">
-          <Projects />
+          <Projects state={state}/>
         </Route>
         <Route path="/">
           <Home />
