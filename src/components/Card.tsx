@@ -1,16 +1,13 @@
+import { useState } from "react";
 import styled from "styled-components";
-import ImageBox from './ImageBox';
+import Modal from './Modal';
 import Text from './Text';
 
 interface CardPropsType {
-  ImgUrl: string,
-  ImgWidth: string, 
-  ImgHeight: string,
-  TextWidth: string,
-  text: string,
+  data: any,
 }
 
-const Card = styled.div`
+const CardWrapper = styled.div`
   position: relative;
   min-width: 360px;
   background-color: #fff;
@@ -20,6 +17,11 @@ const Card = styled.div`
   width: 15rem;
   height: auto;
   margin: 1rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 99;
+  }
 `
 
 const Img = styled.img`
@@ -28,19 +30,27 @@ const Img = styled.img`
 `
 
 const CardBody = styled.div`
-  padding: 1rem 1rem;
+  padding: 0 1rem;
+  padding-top: 1rem;
 `
 
-function card( { ImgWidth, ImgHeight, TextWidth, text, ImgUrl }: CardPropsType ) {
+function Card( { data }: CardPropsType ) {
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
   return (
-    <Card>
-      <Img src={ImgUrl} />
-      <CardBody>
-        <Text width={TextWidth}>{text}</Text>
-      </CardBody>
-    </Card>
+    <>
+      <CardWrapper>
+        <Img src={data.imgUrl} />
+        <CardBody>
+          <Text as='h5'>{data.title}</Text>
+          <Text width='100%'>{data.text}</Text>
+          <button onClick={() => { setIsVisibleModal(true) }}>view detail</button>
+        </CardBody>
+      </CardWrapper>
+      {isVisibleModal && <Modal data={data} onClick={setIsVisibleModal}/>}
+    </>
+    
   )
 }
 
 
-export default card
+export default Card

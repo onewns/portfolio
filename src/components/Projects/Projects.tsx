@@ -21,14 +21,16 @@ const CardWrapper = styled(Wrapper)`
 `
 
 
-function Projects(): React.ReactElement {
+function Projects({ state }: any): React.ReactElement {
+  const { projects } = state;
+  
   return (
     <ProjectsWrqpper>
       <Title>My Projects</Title>
       <CardWrapper>
-        <Card ImgWidth="100%" ImgHeight="50%" TextWidth="100%" text="프로젝트 설명" ImgUrl="Tailor.png"/>
-        <Card ImgWidth="100%" ImgHeight="50%" TextWidth="100%" text="프로젝트 설명" ImgUrl="UWantBeer.jpg"/>
-        <Card ImgWidth="100%" ImgHeight="50%" TextWidth="100%" text="프로젝트 설명" ImgUrl="FaceOFF.png"/>
+        {projects.map((project: any, index: number) => 
+          <Card key={index} data={project} />
+        )}
       </CardWrapper>
     </ProjectsWrqpper>
   )
