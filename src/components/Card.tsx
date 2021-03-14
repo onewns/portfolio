@@ -40,8 +40,9 @@ function Card( { data }: CardPropsType ) {
         <Img src={data.imgUrl} />
         <CardBody>
           <Text as='h5'>{data.title}</Text>
-          <Text width='100%'>{data.text}</Text>
-          <button onClick={() => { setIsVisibleModal(true) }}>view detail</button>
+          <Text width='100%'>{data.summary}</Text>
+          <button onClick={() => { setIsVisibleModal(true); 
+            document.querySelector('body')?.classList.add('not-scroll')}}>view detail</button>
         </CardBody>
       </CardWrapper>
       {isVisibleModal && <Modal data={data} onClick={setIsVisibleModal}/>}
