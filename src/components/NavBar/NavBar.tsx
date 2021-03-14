@@ -9,8 +9,14 @@ interface ContinerPropsType {
   position: string
 }
 
+interface NavPropsType {
+  isHome: boolean,
+}
 
-const Nav = styled.nav<any>`
+
+const Nav = styled.nav<NavPropsType>`
+  position: sticky;
+  top: 0;
   height: 50px;
   width: 100%;
   background-color:#E8C0FF;

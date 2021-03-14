@@ -26,12 +26,10 @@ const CardWrapper = styled.div`
 
 const Img = styled.img`
   width: 100%;
-  height: 50%;
 `
 
 const CardBody = styled.div`
-  padding: 0 1rem;
-  padding-top: 1rem;
+  padding: 1rem 1rem;
 `
 
 function Card( { data }: CardPropsType ) {

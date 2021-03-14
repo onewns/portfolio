@@ -34,7 +34,7 @@ const state = {
 function App():React.ReactElement {
   return (
     <div className="App">
-        <NavVar />
+      <NavVar />
       <Switch>
         <Route path="/about">
           <About />
