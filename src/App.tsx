@@ -26,7 +26,8 @@ const state = {
         'prisma.png',
         'styledComponents.png',
       ],
-      text: 'Tailor 설명',
+      text: `릴레이 기능을 추가한 챌린지특화 sns서비스 입니다.
+      REST api 대신 graphQL을 사용해서 개발했으며 frontend를 맡아 게시물의 업로드 기능과 상태에 따른 화면 구성 및 스타일링을 맡아 개발했습니다.`,
     },
     {
       title: 'UWantBeer',
@@ -43,11 +44,12 @@ const state = {
         'firebase.png',
         'sass.png',
       ],
-      text: 'UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer UWantBeer vvvvv설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명UWantBeer 설명',
+      text: `사용자의 리뷰 정보를 바탕으로 맥주를 추천해주는 맥주 커뮤니티입니다.
+      python의 pandas 라이브러리와 surprise 라이브러리의 svd 모델을 이용하여 추천시스템을 구현했습니다.`,
     },
     {
       title: 'FaceOFF',
-      summary: '초상권 침해를 방지하기 위한 웹 애플리케이션',
+      summary: '초상권 침해를 방지하기 위한 웹 앱',
       imgUrl: 'FaceOFF.png',
       repoUrl: 'https://github.com/wonjun9090/FaceOFF',
       date: {start: '2020년 10월 12일', end: '2020년 11월 16일'},
@@ -60,7 +62,8 @@ const state = {
         'mariaDB.png',
         'sass.png',
       ],
-      text: 'FaceOFF 설명',
+      text: `자동으로 인식된 얼굴로 간편한 모자이크 설정이 가능한 웹 앱입니다.
+      frontend를 맡아 모자이크 대상 선택, 친구 관리, 모자이크 옵션 중 픽셀, 블러, 가상얼굴 변환 기능을 맡았습니다.`,
     },
   ] 
 }
@@ -72,13 +75,13 @@ function App():React.ReactElement {
     <div className="App">
       <NavVar />
       <Switch>
-        <Route path="/about">
+        <Route path="/about" exact>
           <About />
         </Route>
-        <Route path="/projects">
+        <Route path="/projects" exact>
           <Projects state={state}/>
         </Route>
-        <Route path="/">
+        <Route path="/" exact>
           <Home />
         </Route>
       </Switch>
