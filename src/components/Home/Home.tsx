@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Text from '../Text';
 import ImageBox from '../ImageBox';
-import Button from '../Button';
+import BaseButton from '../BaseButton';
 import Wrapper from '../Wrapper';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ const IconWrapper = styled(Wrapper)<any>`
 `
 
 
-const DetailButton = styled(Button)<any>`
+const DetailButton = styled(BaseButton)<any>`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -52,7 +52,7 @@ function Home(): React.ReactElement {
   return (
     <HomeWrapper>
       <Text height="10vh" width='auto' as="h1">LWJ</Text>
-      <DetailButton onClick={() => { setIsVisible(true) } } isVisible={isVisible}>View More</DetailButton>
+      <DetailButton onClick={() => { setIsVisible(true) } } isVisible={isVisible}>Click Me</DetailButton>
       <IconWrapper isVisible={isVisible}>
         <Link to='/projects'>
           <Icon ImgUrl="projects.png" width="30vw" height="30vw"/>

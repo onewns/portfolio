@@ -1,4 +1,11 @@
 import styled from "styled-components"
+import Icon from './Icon';
+import BaseButton from './BaseButton';
+
+interface modalPropsType {
+  data?: any,
+  onClick?: any
+}
 
 const ModalOutside = styled.div`
   position: fixed;
@@ -22,21 +29,17 @@ const ModalWrapper = styled.div`
   overflow-y: scroll;
 `
 
-interface modalPropsType {
-  data?: any,
-  onClick?: any
-}
+const CloseButton = styled(BaseButton)`
+  position: sticky;
+  width: auto;
+  height: auto;
+  border-radius: 100%;
+`
 
 
 function Modal( {data, onClick } : modalPropsType) {
-  console.log(typeof(onClick))
   const Icons = data.icons.map((icon:string, index:number) :any => 
-      <img key={index} src={icon} style={{
-        height:'50px',
-        borderRadius: '4px',
-        border: '1px',
-        margin: '2px'
-      }} alt="" />)
+      <Icon key={index} src={icon} height='50px' alt="" />)
   return (
     <ModalOutside onClick={(event) => {
       if (event.target === event.currentTarget) {
@@ -45,16 +48,14 @@ function Modal( {data, onClick } : modalPropsType) {
       }
     }}>
       <ModalWrapper>
-        <button onClick={() => {onClick(false)
-        document.querySelector('body')?.classList.remove('not-scroll')
-        
-        }}>닫기</button>
-        <img src={data.imgUrl} style={{width:'100%'}} alt="" />
         <h2>{data.title}</h2>
+        <img src={data.imgUrl} style={{width:'100%'}} alt="" />
         <p>{data.date.start} ~ {data.date.end}</p>
         {Icons}
-        <p>{data.text}</p>
-        <a href={data.repoUrl} target='_blank'><button>repo</button></a>
+        <p style={{whiteSpace: 'pre-wrap'}}>{data.text}</p>
+        <a href={data.repoUrl} target='_blank'>
+          <BaseButton>전체코드보기</BaseButton>
+        </a>
       </ModalWrapper>
     </ModalOutside>
   )

@@ -2,6 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import Modal from './Modal';
 import Text from './Text';
+import BaseButton from './BaseButton';
+
 
 interface CardPropsType {
   data: any,
@@ -18,7 +20,6 @@ const CardWrapper = styled.div`
   height: auto;
   margin: 1rem;
   &:hover {
-    cursor: pointer;
     transform: scale(1.1);
     z-index: 99;
   }
@@ -41,8 +42,8 @@ function Card( { data }: CardPropsType ) {
         <CardBody>
           <Text as='h5'>{data.title}</Text>
           <Text width='100%'>{data.summary}</Text>
-          <button onClick={() => { setIsVisibleModal(true); 
-            document.querySelector('body')?.classList.add('not-scroll')}}>view detail</button>
+          <BaseButton onClick={() => { setIsVisibleModal(true); 
+            document.querySelector('body')?.classList.add('not-scroll')}}>view detail</BaseButton>
         </CardBody>
       </CardWrapper>
       {isVisibleModal && <Modal data={data} onClick={setIsVisibleModal}/>}
