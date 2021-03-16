@@ -62,7 +62,25 @@ const state = {
       ],
       text: ` 자동으로 인식된 얼굴로 간편한 모자이크 설정이 가능한 웹 앱입니다. frontend를 맡아 모자이크 대상 선택, 친구 관리, 모자이크 옵션 중 픽셀, 블러, 가상얼굴 변환 기능을 맡았습니다.`,
     },
-  ] 
+  ],
+  profile: {
+    title: `안녕하세요 웹 개발자 이원준입니다!`,
+    text: ``,
+    techStacks: [
+      'python.png',
+      'django.png',
+      'drf.png',
+      'javascript.png',
+      'typescript.png',
+      'react.png',
+      'redux.png',
+      'vue.png',
+      'html.png',
+      'css.png',
+      'styledComponents.png',
+      'git.png',
+    ]
+  }
 }
 
 
@@ -73,7 +91,7 @@ function App():React.ReactElement {
       <NavVar />
       <Switch>
         <Route path="/about" exact>
-          <About />
+          <About profile={state.profile}/>
         </Route>
         <Route path="/projects" exact>
           <Projects state={state}/>
