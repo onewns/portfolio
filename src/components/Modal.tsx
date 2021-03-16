@@ -1,6 +1,9 @@
 import styled from "styled-components"
-import Icon from './Icon';
+import IconsBuilder from './Icon';
 import BaseButton from './BaseButton';
+import Text from './Text';
+import Img from './Img';
+
 
 interface modalPropsType {
   data?: any,
@@ -19,7 +22,8 @@ const ModalOutside = styled.div`
 
 const ModalWrapper = styled.div`
   width: 50vw;
-  min-width: 360px;
+  min-width: 280px;
+  max-width: 720px;
   background-color: white;
   position: absolute;
   max-height:80vh;
@@ -29,17 +33,24 @@ const ModalWrapper = styled.div`
   overflow-y: scroll;
 `
 
-const CloseButton = styled(BaseButton)`
-  position: sticky;
-  width: auto;
-  height: auto;
-  border-radius: 100%;
+const LinkButton = styled(BaseButton)`
+  width: 80%;
+  margin-bottom: 1rem;
 `
 
+const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  height: 120px;
+`;
 
 function Modal( {data, onClick } : modalPropsType) {
   const Icons = data.icons.map((icon:string, index:number) :any => 
-      <Icon key={index} src={icon} height='50px' alt="" />)
+      <IconsBuilder key={index} src={icon} height='50px' alt="" />)
   return (
     <ModalOutside onClick={(event) => {
       if (event.target === event.currentTarget) {
@@ -48,13 +59,15 @@ function Modal( {data, onClick } : modalPropsType) {
       }
     }}>
       <ModalWrapper>
-        <h2>{data.title}</h2>
-        <img src={data.imgUrl} style={{width:'100%'}} alt="" />
-        <p>{data.date.start} ~ {data.date.end}</p>
-        {Icons}
-        <p style={{whiteSpace: 'pre-wrap'}}>{data.text}</p>
+        <Text as='h2'>{data.title}</Text>
+        <Img src={data.imgUrl} width='100%' alt="" />
+        <Text as='h5'>{data.date.start} ~ {data.date.end}</Text>
+        <IconWrapper>
+          {Icons}
+        </IconWrapper>
+        <Text style={{whiteSpace: 'pre-wrap', textAlign:'initial', padding:'1rem'}}>{data.text}</Text>
         <a href={data.repoUrl} target='_blank'>
-          <BaseButton>전체코드보기</BaseButton>
+          <LinkButton>전체코드보기</LinkButton>
         </a>
       </ModalWrapper>
     </ModalOutside>
