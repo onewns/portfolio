@@ -21,9 +21,8 @@ const HomeWrapper = styled(Wrapper)`
 `
 
 const IconWrapper = styled(Wrapper)<any>`
-  height:auto;
+  height:100vh;
   position: relative;
-  top: 10vh;
   display:${props => props.isVisible ? 'flex' : 'none'};
   justify-content: space-evenly;
   align-items: center;
@@ -51,7 +50,6 @@ function Home(): React.ReactElement {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <HomeWrapper>
-      <Text height="10vh" width='auto' as="h1">LWJ</Text>
       <DetailButton onClick={() => { setIsVisible(true) } } isVisible={isVisible}>Click Me</DetailButton>
       <IconWrapper isVisible={isVisible}>
         <Link to='/projects'>
