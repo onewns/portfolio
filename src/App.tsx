@@ -26,9 +26,7 @@ const state = {
         'prisma.png',
         'styledComponents.png',
       ],
-      text: 
-` 릴레이 기능을 추가한 챌린지특화 sns서비스 입니다.
-REST api 대신 graphQL을 사용해서 개발했으며 frontend를 맡아 게시물의 업로드 기능과 상태에 따른 화면 구성 및 스타일링을 맡아 개발했습니다.`,
+      text: ` 릴레이 기능을 추가한 챌린지특화 sns서비스 입니다. REST api 대신 graphQL을 사용해서 개발했으며 frontend를 맡아 게시물의 업로드 기능과 상태에 따른 화면 구성 및 스타일링을 맡아 개발했습니다.`,
     },
     {
       title: 'UWantBeer',
@@ -45,9 +43,7 @@ REST api 대신 graphQL을 사용해서 개발했으며 frontend를 맡아 게�
         'firebase.png',
         'sass.png',
       ],
-      text: 
-`사용자의 리뷰 정보를 바탕으로 맥주를 추천해주는 맥주 커뮤니티입니다.
-python의 pandas 라이브러리와 surprise 라이브러리의 svd 모델을 이용하여 추천시스템을 구현했습니다.`,
+      text: ` 사용자의 리뷰 정보를 바탕으로 맥주를 추천해주는 맥주 커뮤니티입니다. python의 pandas 라이브러리와 surprise 라이브러리의 svd 모델을 이용하여 추천시스템을 구현했습니다.`,
     },
     {
       title: 'FaceOFF',
@@ -64,11 +60,27 @@ python의 pandas 라이브러리와 surprise 라이브러리의 svd 모델을 �
         'mariaDB.png',
         'sass.png',
       ],
-      text: 
-`자동으로 인식된 얼굴로 간편한 모자이크 설정이 가능한 웹 앱입니다.
-frontend를 맡아 모자이크 대상 선택, 친구 관리, 모자이크 옵션 중 픽셀, 블러, 가상얼굴 변환 기능을 맡았습니다.`,
+      text: ` 자동으로 인식된 얼굴로 간편한 모자이크 설정이 가능한 웹 앱입니다. frontend를 맡아 모자이크 대상 선택, 친구 관리, 모자이크 옵션 중 픽셀, 블러, 가상얼굴 변환 기능을 맡았습니다.`,
     },
-  ] 
+  ],
+  profile: {
+    title: `안녕하세요 웹 개발자 이원준입니다!`,
+    text: ``,
+    techStacks: [
+      'python.png',
+      'django.png',
+      'drf.png',
+      'javascript.png',
+      'typescript.png',
+      'react.png',
+      'redux.png',
+      'vue.png',
+      'html.png',
+      'css.png',
+      'styledComponents.png',
+      'git.png',
+    ]
+  }
 }
 
 
@@ -79,7 +91,7 @@ function App():React.ReactElement {
       <NavVar />
       <Switch>
         <Route path="/about" exact>
-          <About />
+          <About profile={state.profile}/>
         </Route>
         <Route path="/projects" exact>
           <Projects state={state}/>

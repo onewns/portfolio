@@ -17,15 +17,22 @@ interface NavPropsType {
 const Nav = styled.nav<NavPropsType>`
   position: sticky;
   top: 0;
-  height: 50px;
+  height: 70px;
   width: 100%;
   background-color:#E8C0FF;
   display: ${props => props.isHome ? 'none' : ''};
+  z-index: 10;
 `
 
 const Container = styled.div<ContinerPropsType>`
   height: 50px;
   float: ${props => props.position};
+`
+
+const NavText = styled(Text)`
+  margin: 0px 10px;
+  font-size: 20px;
+  line-height: 70px;
 `
 
 function NavBar({ location }: any) : React.ReactElement {
@@ -34,18 +41,22 @@ function NavBar({ location }: any) : React.ReactElement {
     <Nav isHome={location.pathname === '/'}>
       <Container position="left">
         <Link to='/'>
-          <Text>Home</Text>
+          <NavText>Home</NavText>
         </Link>
         <Link to='/projects'>
-          <Text>Projects</Text>
+          <NavText>Projects</NavText>
         </Link>
         <Link to='/about'>
-          <Text>About</Text>
+          <NavText>AboutMe</NavText>
         </Link>
       </Container>
       <Container position="right">
-        <ImageBox radius="100%" width="50px" height="50px" ImgUrl="GitHub.png"/>
-        <ImageBox radius="100%" width="50px" height="50px" ImgUrl="mail.png"/>
+        <a href="https://github.com/wonjun9090" target="_blank">
+          <ImageBox radius="100%" width="70px" height="70px" ImgUrl="GitHub.png"/>
+        </a>
+        <a href="mailto:wonjun9090@naver.com">
+          <ImageBox radius="100%" width="70px" height="70px" ImgUrl="mail.png"/>
+        </a>
       </Container>
     </Nav>
   )
